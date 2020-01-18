@@ -1,13 +1,14 @@
+language: node_js
+node_js:
+- 12
+
 script:
-  - echo "run test script here"
+- echo "run test script here"
 
 cache:
-  - yarn
+- yarn
 
-after_success:
-  - 'echo "email=namvhoang02@gmail.com" >> $HOME/.npmrc 2> /dev/null'
-  - 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null'
-  - npm publish
+# after_success:
 
 notifications:
   email:
@@ -22,8 +23,9 @@ git:
 deploy:
   provider: npm
   email: namvhoang02@gmail.com
-  api_key:
-    secure: BYb1f0Rjeupp90OTc+nskGPwpa2ASQYkUV7pPYJrBK5LeWt276ceeqKFxlF05oYSbaxk+UEtkK3Rq33gQTw4/DOW/vRWEQp4XsszFTVuK9qkENtTBoqc+71YaXlLjI2Pv5ngeI+5Kh7f+CthcxbaaJMl8vnalOq66Be+YAG2sn9cUgwzQ3YlUm2FChoxvdAHBtM43fvZVLS+B/jchQAQ1faHeafX/lBRqYyQFYeC1OL+vGRKKpMOwFPJCwc27xOSOusGAUl39nOao1wpBSHL9VsrG/LVl8lxWAn2I6Z6mNp6R/rwcrDIAldc/BI3BNzoqD6HX+qiudiRv1758knhStjAidFEYggArQ0L/4UcKCDlt8JbVxKqu4xnjPwIlaI5BhZEUCGomlrUd068DtQ9jvDSQdU9778MSEG9u+uRB6kfjkRmBkThc89fKbr0a7MwpdK61bdasBAjhVsm3V9Fch3vZDDrOgI03JWxkhM+XqWWF1cfd0wHv+4mRJnJzWHYn0cDyr80SZVrpZWxKsTVqeSiemTCcnQbSV2QbJpxlqZy3R5FAUKC4CyUHaBbBljRspGtzXMrl0ER4upk8E4C6wPhet+TF4h2aQsxtHZC/6hapsruR5jGtcqsEDuwORX1nm0KlnMINa7cGMJ6V8UEp0e/09zlmeWiwb6t6xwmAl0=
+  edge: true
+  api_token:
+    secure: kXSIGyRjrXoog4vECjF89YgPQ0qpmKmeiMfFBTur/jSAUYm9AMW51kTTdm6yEA4KAvXUyjD7qhWJKmqSLl53unqexjfm9OiasE3ZC2n8uHEBW0gReHpqZ5g78wqHd+YX8VpJbWN241/1cgbjGSa2koReU/ZcxKhAL7HTm7eFmK7o40WTPSVWQ1aDXL59UWPylVPVEXf9R3xHiio3ymh+XzQbe0kRZ8inax+R8vAfz1qLUk5x/mK6xwPVp5Vos/fRrZqjN62cyrFjuB0yfqX41u9CtG7aYfeNKS6sEeBN323ncOOn/MfzijAIP74tgo8v7ps4gSjPYOfWQAgd+zPT7o4g21KrJRc2hkwcDcbk6jxOxY1N7f5/FE7WaMYt7HCJsMNYnS8Tv0LG9dZjh3VZ5p5ZPyKHDoTWOCoh+BnikTaxs5/ZilRSGEaqfAQ8OULmjKelqNl2RS07Ry6HW6wC0REhYafRSbSH6emP6sPljthC8JjPUpdSN37XwSPa+FJyvNIe5ZtXw02qvRI2H7vRxXejZRBlXpmda4muimHbp9cvrc0tY3kSwHaVEOBdmGri0/QmG56tLSjNHzkUcO+2UXv4gf3xX9UxxoN4g+PwzBAWbnz+HFzauXs+XHAKVbARchG/lQ+LgiZKcT+yHQYHOmUJhbV3+NQWT3yT5dbksIA=
   on:
     tags: true
     repo: namvhoang02/penguin-scroll

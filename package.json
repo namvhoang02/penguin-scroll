@@ -1,15 +1,33 @@
 {
-    "name": "@penguin/scroll",
-    "version": "1.0.0-rc.1",
-    "main": "./src/index.js",
-    "module": "./src/index.js",
-    "jsnext:main": "./src/index.js",
-    "typings": "./src/index.d.ts",
-    "sideEffects": false,
-    "directories": {
-        "lib": "src"
-    },
-    "files": [
-        "src"
-    ]
+  "name": "@penguin-ui/scroll",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/namvhoang02/penguin-scroll.git"
+  },
+  "main": "./build/index.js",
+  "module": "./build/index.js",
+  "jsnext:main": "./build/index.js",
+  "typings": "./build/index.d.ts",
+  "sideEffects": false,
+  "directories": {
+    "lib": "build"
+  },
+  "files": [
+    "build"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "bugs": {
+    "url": "https://github.com/namvhoang02/penguin-scroll/issues"
+  },
+  "homepage": "https://github.com/namvhoang02/penguin-scroll#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": ""
 }
