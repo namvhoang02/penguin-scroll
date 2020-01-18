@@ -1,0 +1,15 @@
+{
+    "name": "@penguin/scroll",
+    "version": "1.0.0-rc.1",
+    "main": "./src/index.js",
+    "module": "./src/index.js",
+    "jsnext:main": "./src/index.js",
+    "typings": "./src/index.d.ts",
+    "sideEffects": false,
+    "directories": {
+        "lib": "src"
+    },
+    "files": [
+        "src"
+    ]
+}

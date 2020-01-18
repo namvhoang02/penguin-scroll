@@ -1,0 +1,29 @@
+script:
+  - echo "run test script here"
+
+cache:
+  - yarn
+
+after_success:
+  - 'echo "email=namvhoang02@gmail.com" >> $HOME/.npmrc 2> /dev/null'
+  - 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null'
+  - npm publish
+
+notifications:
+  email:
+    recipients:
+    - namvhoang02@gmail.com
+    on_success: never
+    on_failure: always
+
+git:
+  depth: 1
+
+deploy:
+  provider: npm
+  email: namvhoang02@gmail.com
+  api_key:
+    secure: BYb1f0Rjeupp90OTc+nskGPwpa2ASQYkUV7pPYJrBK5LeWt276ceeqKFxlF05oYSbaxk+UEtkK3Rq33gQTw4/DOW/vRWEQp4XsszFTVuK9qkENtTBoqc+71YaXlLjI2Pv5ngeI+5Kh7f+CthcxbaaJMl8vnalOq66Be+YAG2sn9cUgwzQ3YlUm2FChoxvdAHBtM43fvZVLS+B/jchQAQ1faHeafX/lBRqYyQFYeC1OL+vGRKKpMOwFPJCwc27xOSOusGAUl39nOao1wpBSHL9VsrG/LVl8lxWAn2I6Z6mNp6R/rwcrDIAldc/BI3BNzoqD6HX+qiudiRv1758knhStjAidFEYggArQ0L/4UcKCDlt8JbVxKqu4xnjPwIlaI5BhZEUCGomlrUd068DtQ9jvDSQdU9778MSEG9u+uRB6kfjkRmBkThc89fKbr0a7MwpdK61bdasBAjhVsm3V9Fch3vZDDrOgI03JWxkhM+XqWWF1cfd0wHv+4mRJnJzWHYn0cDyr80SZVrpZWxKsTVqeSiemTCcnQbSV2QbJpxlqZy3R5FAUKC4CyUHaBbBljRspGtzXMrl0ER4upk8E4C6wPhet+TF4h2aQsxtHZC/6hapsruR5jGtcqsEDuwORX1nm0KlnMINa7cGMJ6V8UEp0e/09zlmeWiwb6t6xwmAl0=
+  on:
+    tags: true
+    repo: namvhoang02/penguin-scroll
